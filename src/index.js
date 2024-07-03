@@ -14,3 +14,6 @@ const player2 = {
     PONTOS: 0,
 }
 
+function rollDice() {
+    return Math.floor(Math.random() * 6) + 1;
+}
