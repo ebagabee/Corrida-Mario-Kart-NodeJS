@@ -24,3 +24,9 @@ const player2 = {
 async function rollDice() {
     return Math.floor(Math.random() * 6) + 1;
 }
+
+// Função de entrada responsável por chamar todas as outras funções
+// Função auto-invocada 
+(async function main() {
+    console.log("Corrida Iniciada")
+})();
