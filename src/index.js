@@ -28,5 +28,7 @@ async function rollDice() {
 // Função de entrada responsável por chamar todas as outras funções
 // Função auto-invocada 
 (async function main() {
-    console.log("Corrida Iniciada")
+    console.log(
+        `Corrinda entre ${player1.NOME} e ${player2.NOME} começando... \n`
+    )
 })();
