@@ -25,10 +25,17 @@ async function rollDice() {
     return Math.floor(Math.random() * 6) + 1;
 }
 
+
+async function playRaceEngine(character1, character2) {
+
+}
+
 // Função de entrada responsável por chamar todas as outras funções
 // Função auto-invocada 
 (async function main() {
     console.log(
         `Corrinda entre ${player1.NOME} e ${player2.NOME} começando... \n`
     )
+
+    await playRaceEngine(player1, player2);
 })();
