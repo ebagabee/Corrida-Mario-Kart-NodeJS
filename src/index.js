@@ -26,7 +26,7 @@ async function rollDice() {
 }
 
 async function logRollResult(playerName, block, diceResult, attribute) {
-    console.log(`${playerName} 🎲 Rolou um dado de ${block} ${diceResult}`)
+    console.log(`${playerName} 🎲 Rolou um dado de ${block} ${diceResult} + ${attribute} = ${diceResult + attribute}`)
 }
 
 async function playRaceEngine(character1, character2) {
