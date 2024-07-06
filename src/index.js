@@ -25,6 +25,9 @@ async function rollDice() {
     return Math.floor(Math.random() * 6) + 1;
 }
 
+async function logRollResult(playerName, block, diceResult, attribute) {
+    console.log(`${playerName} 🎲 Rolou um dado de ${block} ${diceResult}`)
+}
 
 async function playRaceEngine(character1, character2) {
     for (let round = 1; round <= 5; round++) {
@@ -45,12 +48,21 @@ async function playRaceEngine(character1, character2) {
         if (block === "RETA") {
             totalTestSkill1 = diceResult1 + character1.VELOCIDADE;
             totalTestSkill2 = diceResult2 + character2.VELOCIDADE;
+
+            await logRollResult(player1.NOME, "velocidade", diceResult1, character1.VELOCIDADE);
+            await logRollResult(player2.NOME, "velocidade", diceResult2, character2.VELOCIDADE);
         } else if (block === "CURVA") {
             totalTestSkill1 = diceResult1 + character1.MANOBRABILIDADE;
             totalTestSkill2 = diceResult2 + character2.MANOBRABILIDADE;
+
+            await logRollResult(player1.NOME, "manobrabilidade", diceResult1, character1.MANOBRABILIDADE);
+            await logRollResult(player2.NOME, "manobrabilidade", diceResult2, character2.MANOBRABILIDADE);
         } else if (block === "CONFRONTO") {
             totalTestSkill1 = diceResult1 + character1.PODER;
             totalTestSkill2 = diceResult2 + character2.PODER;
+
+            await logRollResult(player1.NOME, "poder", diceResult1, character1.PODER);
+            await logRollResult(player2.NOME, "poder", diceResult2, character2.PODER);
         }
     }
 }
