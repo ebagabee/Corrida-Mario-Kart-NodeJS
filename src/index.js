@@ -111,6 +111,16 @@ async function getRandomBlock() {
     return result;
 }
 
+async function declareWinner(character1, character2) {
+    console.log("Resultado final:");
+    console.log(`${character1.NOME}: ${character1.PONTOS} ponto(s)`);
+    console.log(`${character2.NOME}: ${character2.PONTOS}`);
+
+    if (character1.PONTOS > character2.PONTOS) console.log(`${character1.NOME} venceu a partida. Parabéns! 🏆`);
+    else if (character2.PONTOS > character1.PONTOS) console.log(`${character2.NOME} venceu a partida. Parabéns! 🏆`);
+    else console.log("A partida terminou empatada! 😐");
+}
+
 // Função de entrada responsável por chamar todas as outras funções
 // Função auto-invocada 
 (async function main() {
@@ -119,4 +129,5 @@ async function getRandomBlock() {
     )
 
     await playRaceEngine(player1, player2);
+    await declareWinner(player1, player2);
 })();
