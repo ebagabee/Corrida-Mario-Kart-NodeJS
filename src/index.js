@@ -64,6 +64,18 @@ async function playRaceEngine(character1, character2) {
             await logRollResult(player1.NOME, "poder", diceResult1, character1.PODER);
             await logRollResult(player2.NOME, "poder", diceResult2, character2.PODER);
         }
+
+        if (totalTestSkill1 > totalTestSkill2) {
+            console.log(`${character1.NOME} marcou um ponto`);
+            character1.PONTOS++;
+        } else if (totalTestSkill1 === totalTestSkill2) {
+            console.log("Empate");
+        } else {
+            console.log(`${character2.NOME} marcou um ponto`);
+            character2.PONTOS++;
+        }
+
+        console.log('------------------------------------');
     }
 }
 
